@@ -38,10 +38,19 @@ urll = f'https://www.meteoprog.pl/pl/weather/{city}/'
 resp = requests.get(urll)
 
 soup = BeautifulSoup(resp.content, features='html.parser')
+names = soup.find_all('span', class_='today-hourly-weather__name')
+print(names)
 table = soup.find_all('span', class_='today-hourly-weather__temp')
 
 tablica_temp = []
 ilosc = 0
+tablica_nazw = []
+for name in names:
+    print(name.text)
+    tablica_nazw.append(name.text)
+
+print(tablica_nazw)
+
 
 for temp in table:
     bez_plusC = int(temp.text.replace("°", "").replace("+", ""))
@@ -76,5 +85,7 @@ plt.show()
 Przygotować kod, który wygeneruje wieloserjny wykres liniowy wartości odczytów wybranych czujników wybranej stacji
  pomiarowej z ostatnich godzin. Jako źródło danych wykorzystać API GIOŚ."""
 
+
+urlll = ""
 """ ZADANIE 4
 Która z automatycznych metod ekstrakcji informacji z aplikacji internetowych jest wygodniejsza?"""
