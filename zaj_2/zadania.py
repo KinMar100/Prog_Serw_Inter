@@ -33,7 +33,7 @@ Przy implementacji rozwiązania proszę wykorzystać bibliotekę BeautifulSoup. 
 narzędzie."""
 
 
-city = 'Olsztyn'
+city = 'Warszawa'
 urll = f'https://www.meteoprog.pl/pl/weather/{city}/'
 resp = requests.get(urll)
 
@@ -57,8 +57,7 @@ fig, ax = plt.subplots()
 
 ax.bar(x, y, width=1, edgecolor="white", linewidth=0.5, color='blueviolet')
 ax.set(xlim=(0, 6), xticks=np.arange(1, 6),
-       ylim=(0, 20), yticks=np.arange(1, 20))
-
+       ylim=(0, 20), yticks=np.arange(1, 25))
 plt.xlabel("Kolejne pory dla temperatur")
 plt.ylabel("Wartość")
 plt.title(f'Wykres temperatur dla miejscowości: {city}')
