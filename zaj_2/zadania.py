@@ -55,15 +55,21 @@ y = tablica_temp
 
 fig, ax = plt.subplots()
 
-ax.bar(x, y, width=1, edgecolor="white", linewidth=0.5, color='blueviolet')
+# wykres slupkowy
+'''ax.bar(x, y, width=1, edgecolor="white", linewidth=0.5, color='blueviolet')
+ax.set(xlim=(0, 6), xticks=np.arange(1, 6),
+       ylim=(0, 20), yticks=np.arange(1, 25))
+       '''
+
+# wykres liniowy
+
+ax.plot(x, y, linewidth=2.0)
 ax.set(xlim=(0, 6), xticks=np.arange(1, 6),
        ylim=(0, 20), yticks=np.arange(1, 25))
 plt.xlabel("Kolejne pory dla temperatur")
 plt.ylabel("Wartość")
 plt.title(f'Wykres temperatur dla miejscowości: {city}')
 plt.show()
-
-# print(table)
 
 
 """ ZADANIE 3 
