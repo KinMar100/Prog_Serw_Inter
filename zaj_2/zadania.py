@@ -33,7 +33,7 @@ Przy implementacji rozwiązania proszę wykorzystać bibliotekę BeautifulSoup. 
 narzędzie."""
 
 
-city = 'Warszawa'
+city = 'Olsztyn'
 urll = f'https://www.meteoprog.pl/pl/weather/{city}/'
 resp = requests.get(urll)
 
