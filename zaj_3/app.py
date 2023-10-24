@@ -1,5 +1,4 @@
 from dependency_injector.wiring import Provide
-
 from container import Container
 from services.iweather_service import IWeatherService
 
