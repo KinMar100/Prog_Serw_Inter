@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse as HttpR, HttpResponseBase
 
-# Create your views here.
+
+def home(request) -> HttpResponseBase:
+    return render(request, 'home.html')
+
+
+def subpage(request) -> HttpResponseBase:
+    return render(request, 'subpage.html')
