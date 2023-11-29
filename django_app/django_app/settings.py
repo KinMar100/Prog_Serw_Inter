@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ankiety.apps.AnkietyConfig',
+    'polls.apps.AnkietyConfig',
 
 ]
 
