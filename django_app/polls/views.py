@@ -8,7 +8,7 @@ from .models import Question, Choice
 
 
 def index(request) -> HttpR:
-    return HttpR("Indeks ankiet")
+    return HttpR("Polls index")
 
 
 def details(request, question_id) -> HttpR:
@@ -19,16 +19,15 @@ def details(request, question_id) -> HttpR:
     return render(request, {"question": question})
 
 
-def wynik(request, question_id) -> HttpR:
+def result(request, question_id) -> HttpR:
     try:
-        pytanie = Question.objects.get(pk=question_id)
+        question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Question does not exist.")
-    return render(request, {"question": pytanie})
-    # return HttpR("Wyszukiwanie wyniku dla pytania: {}".format(pytanie_id))
+    return render(request, {"question": question})
 
 
-def glos(request, question_id) -> HttpR:
+def vote(request, question_id) -> HttpR:
     question = get_object_or_404(Question, pk=question_id)
     try:
         chosen_quest = question_id.choice_set.get(pk=request.POST["choice"])
@@ -37,4 +36,3 @@ def glos(request, question_id) -> HttpR:
     else:
         chosen_quest.votes += 1
         chosen_quest.save()
-    # return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
