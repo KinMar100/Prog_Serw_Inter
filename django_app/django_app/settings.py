@@ -29,11 +29,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Panel administracyjny
     'django.contrib.admin',
+    # System uwierzytelniania
     'django.contrib.auth',
+    # Framework dla typów treści
     'django.contrib.contenttypes',
+    # Framework dla sesji
     'django.contrib.sessions',
+    # Framework powiadomien
     'django.contrib.messages',
+    # Framework do zarządzania plikami statycznymi
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
 
