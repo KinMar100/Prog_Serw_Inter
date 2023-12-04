@@ -5,7 +5,7 @@ from django.contrib.auth.models import PermissionsMixin
 
 # Create your models here.
 
-class UserManagement(BaseUserManager):
+"""class UserManagement(BaseUserManager):
     def create_user(self, email, password=None, **ext_fields):
 
         if not email:
@@ -25,7 +25,7 @@ class UserManagement(BaseUserManager):
 
         return user
 
-
+"""
 class Rank(models.Model):
     name = models.CharField(max_length=128)
     description = models.TextField()
