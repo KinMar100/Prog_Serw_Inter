@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     # Framework do zarządzania plikami statycznymi
     'django.contrib.staticfiles',
 
-    # 'rest_framework',
-    # 'rest_framework.authtoken',
+    # Framework Rest
+    'rest_framework',
+    # Swagger tool implemented
+    'drf_yasg',
+    # ----'rest_framework.authtoken',----
 
-    # user.apps.UserConfig',
     'polls.apps.PollsConfig',
 
     # dodac reszte apek
@@ -135,8 +137,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AUTH_USER_MODEL = 'user.User'
 
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
-    ),
-}
+# REST_FRAMEWORK = {
+#      'DEFAULT_FILTER_BACKENDS': (
+#         'django_filters.rest_framework.DjangoFilterBackend',
+#      ),
+# }
