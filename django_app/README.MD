@@ -1,6 +1,6 @@
 # FORUM API
 
-##Zastosowanie:
+## Zastosowanie:
 System stworzony na potrzeby przedmiotu Projektowanie Serwisów Internetowych.
 Zawiera kod napisany z pomocą frameworka Django i Django REST (język programowania Python)
 
@@ -10,7 +10,7 @@ in progress
 
 ## Aplikacja
 
-### ~Users~
+### Users
 
 Modele
 
@@ -23,7 +23,7 @@ User
 - Last login
 
 
-### ~Polls~
+### Polls
 
 Modele:
 
