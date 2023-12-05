@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Question, Choice, Category
-# Register your models here.
+# Register your poll models here.
 # in admin panel
 
 

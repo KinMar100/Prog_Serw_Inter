@@ -49,10 +49,13 @@ INSTALLED_APPS = [
     # ----'rest_framework.authtoken',----
 
     'polls.apps.PollsConfig',
-
+    'users.apps.UsersConfig'
     # dodac reszte apek
 
 ]
+
+# Autoryzacja użytkownika
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,9 +138,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTH_USER_MODEL = 'user.User'
-
-# REST_FRAMEWORK = {
+# REST_FRAMEWORK =
+# {
 #      'DEFAULT_FILTER_BACKENDS': (
 #         'django_filters.rest_framework.DjangoFilterBackend',
 #      ),
