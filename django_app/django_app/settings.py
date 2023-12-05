@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     # Framework do zarządzania plikami statycznymi
     'django.contrib.staticfiles',
 
-    'rest_framework',
-    'rest_framework.authtoken',
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
 
-    #'user.apps.UserConfig',
+    # user.apps.UserConfig',
     'polls.apps.PollsConfig',
 
     # dodac reszte apek
@@ -133,7 +133,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#AUTH_USER_MODEL = 'user.User'
+# AUTH_USER_MODEL = 'user.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (

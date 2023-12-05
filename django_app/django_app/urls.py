@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import permissions
+# from rest_framework import permissions
 
 # tu dostepne adresy URL danej aplikacji
 
