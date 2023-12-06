@@ -12,3 +12,5 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ['id', 'email', 'name', 'date_added', 'last_login']
     list_filter = ['id']
     ordering = ['id']
+
+# done

@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from . models import Question, Choice, Category
-from . serializer import QuestionSerializer, ChoiceSerializer, CategorySerializer
+from . serializers import QuestionSerializer, ChoiceSerializer, CategorySerializer
 
 # Create your views here.
 
