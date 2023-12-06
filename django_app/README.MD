@@ -41,3 +41,12 @@ Choice
 - Choice text
 - Votes
 
+
+## Funkcjonalności
+- dodawanie postów przez użytkowników (w trakcie)
+- zarządzanie postami: dodawanie, edycja, usuwanie (CRUD) (niezaczęte)
+- dodawanie reakcji do postów innych użytkowników (niezaczęte)
+- formularze do ankiet (w trakcie)
+- moderacja komentarzy (niezaczęte)
+- rangi użytkowników (niezaczęte)
+- najnowsze wpisy (niezaczęte)
