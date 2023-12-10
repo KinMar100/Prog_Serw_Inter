@@ -11,7 +11,7 @@ class ChoicesInLine(admin.StackedInline):
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['name']
-    list_display = ['id', 'name', 'question_text', 'category', 'pub_date']
+    list_display = ['id', 'name', 'question_text', 'category', 'pub_date', 'user_question']
     list_filter = ['name']
     inlines = [ChoicesInLine]
     ordering = ['id']
@@ -19,7 +19,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 @admin.register(Choice)
 class ChoiceAdmin(admin.ModelAdmin):
-    list_display = ['id', 'choice_text', 'question', 'votes']
+    list_display = ['id', 'choice_text', 'question', 'votes', 'user_choice']
     list_filter = ['choice_text']
     ordering = ['id']
 

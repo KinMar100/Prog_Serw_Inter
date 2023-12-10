@@ -48,5 +48,5 @@ Choice
 - dodawanie reakcji do postów innych użytkowników (niezaczęte)
 - formularze do ankiet (w trakcie)
 - moderacja komentarzy (niezaczęte)
-- rangi użytkowników (niezaczęte)
+- rangi użytkowników (w trakcie)
 - najnowsze wpisy (niezaczęte)

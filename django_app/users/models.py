@@ -5,11 +5,20 @@ from django.utils import timezone
 # Create your models here.
 
 
+class Rank(models.Model):
+    name = models.CharField(max_length=128)
+
+    def __str__(self) -> str:
+        return self.name
+
+
 class CustomUserManager(UserManager):
     """Own User Manager"""
     def _create_user(self, email, password, **extra_fields):
         if not email:
             raise ValueError("No e-mail provided/Non-valid e-mail")
+        if not password:
+            raise ValueError("No password provided/Non-valid password")
 
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
@@ -33,6 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """User model"""
     email = models.EmailField(blank=True, default='', unique=True)
     name = models.CharField(blank=True, max_length=255, default='')
+    rank = models.ForeignKey(Rank, on_delete=models.SET_NULL, blank=True, null=True)
 
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)

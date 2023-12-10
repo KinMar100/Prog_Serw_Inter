@@ -1,11 +1,14 @@
 from rest_framework import generics, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
+from rest_framework import viewsets
 
-from .serializers import UserSerializer, AuthTokenSerializer
+from . models import Rank
 
+from .serializers import UserSerializer, AuthTokenSerializer, RankSerializer
 
 # Create your views here.
+
 
 class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system"""
@@ -31,3 +34,8 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
         """Retrieve and return authenticated user"""
 
         return self.request.user
+
+
+class RankViewSet(viewsets.ModelViewSet):
+    queryset = Rank.objects.all()
+    serializer_class = RankSerializer

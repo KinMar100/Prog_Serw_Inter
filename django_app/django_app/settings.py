@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     # ----'rest_framework.authtoken',----
 
     'polls.apps.PollsConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'posts.apps.PostsConfig',
     # dodac reszte apek
 
 ]
