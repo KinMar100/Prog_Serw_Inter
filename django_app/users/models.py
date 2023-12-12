@@ -42,7 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """User model"""
     email = models.EmailField(blank=True, default='', unique=True)
     name = models.CharField(blank=True, max_length=255, default='')
-    rank = models.ForeignKey(Rank, on_delete=models.SET_NULL, blank=True, null=True)
+    rank = models.ForeignKey(Rank, on_delete=models.SET_NULL, blank=True, null=True, default='common')
 
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)

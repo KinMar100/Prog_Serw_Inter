@@ -1,15 +1,20 @@
-from django.contrib.auth import get_user_model, authenticate
-from rest_framework import serializers
+from django.contrib.auth import get_user_model
+# , authenticate
 from django.utils.translation import gettext as _
 
+from rest_framework import serializers
 from . models import User, Rank
 
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for the user object"""
     class Meta:
-        model = get_user_model()
-        fields = ('email', 'password', 'name')
+        model = User
+        fields = (
+            'email',
+            'password',
+            'name',
+        )
         extra_kwargs = {
             'password': {
                 'write_only': True,
@@ -23,7 +28,7 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """Create a new user with encrypted password and return it"""
 
-        return get_user_model().objects.create_user(**validated_data)
+        return get_user_model().object.create_user(**validated_data)
 
     def update(self, instance, validated_data):
         """Update a user, setting the password correctly and return it"""
@@ -54,7 +59,7 @@ class AuthTokenSerializer(serializers.Serializer):
         password = attrs.get('password')
 
         if email and password:
-            user = User.objects.filter(email=email).first()
+            user = User.object.filter(email=email).first()
 
             if user and user.check_password(password):
                 if not user.is_active:

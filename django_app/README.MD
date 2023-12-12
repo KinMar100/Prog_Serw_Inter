@@ -43,10 +43,10 @@ Choice
 
 
 ## Funkcjonalności
-- dodawanie postów przez użytkowników (w trakcie)
+- dodawanie postów przez użytkowników (ok)
 - zarządzanie postami: dodawanie, edycja, usuwanie (CRUD) (niezaczęte)
 - dodawanie reakcji do postów innych użytkowników (niezaczęte)
-- formularze do ankiet (w trakcie)
+- formularze do ankiet (ok)
 - moderacja komentarzy (niezaczęte)
-- rangi użytkowników (w trakcie)
+- rangi użytkowników (ok)
 - najnowsze wpisy (niezaczęte)
