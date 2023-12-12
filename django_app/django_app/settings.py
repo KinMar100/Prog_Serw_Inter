@@ -44,9 +44,9 @@ INSTALLED_APPS = [
 
     # Framework Rest
     'rest_framework',
+    'rest_framework.authtoken',
     # Swagger tool implemented
     'drf_yasg',
-    # ----'rest_framework.authtoken',----
 
     'polls.apps.PollsConfig',
     'users.apps.UsersConfig',

@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model, authenticate
 from rest_framework import serializers
 from django.utils.translation import gettext as _
 
-from . models import User
+from . models import User, Rank
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -41,37 +41,40 @@ class UserSerializer(serializers.ModelSerializer):
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer for the user authentication object"""
 
-    email = serializers.CharField()
+    email = serializers.EmailField()
     password = serializers.CharField(
-        style={'input_type': 'password'},
+        style={
+            'input_type': 'password'
+        },
         trim_whitespace=False
     )
 
     def validate(self, attrs: dict) -> dict:
-        """Validate and authenticate the user"""
-
         email = attrs.get('email')
         password = attrs.get('password')
 
-        user = authenticate(
-            request=self.context.get('request'),
-            username=email,
-            password=password
-        )
+        if email and password:
+            user = User.objects.filter(email=email).first()
 
-        if not user:
-            msg = _('Unable to authenticate with provided credentials')
+            if user and user.check_password(password):
+                if not user.is_active:
+                    msg = _('User account is disabled.')
+                    raise serializers.ValidationError(msg)
 
-            raise serializers.ValidationError(msg, code='authentication')
-
-        attrs['user'] = user
-
-        return attrs
+                attrs['user'] = user
+                return attrs
+            else:
+                msg = _('Unable to log.')
+                raise serializers.ValidationError(msg)
+        else:
+            msg = _('Must include "email" and "password".')
+            raise serializers.ValidationError(msg)
 
 
 class RankSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = Rank
         fields = [
+            'id',
             'name',
         ]

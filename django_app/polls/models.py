@@ -6,7 +6,10 @@ from users.models import User
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=128, unique=True)
+
+    class Meta:
+        ordering = ('name', )
 
     def __str__(self) -> str:
         return self.name
@@ -19,6 +22,9 @@ class Question(models.Model):
     category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now=True)
     user_question = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('name', )
 
     def __str__(self) -> str:
         return self.name

@@ -14,6 +14,7 @@ class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system"""
 
     serializer_class = UserSerializer
+    permission_classes = (permissions.AllowAny,)
 
 
 class CreateTokenView(ObtainAuthToken):
@@ -36,6 +37,7 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
         return self.request.user
 
 
-class RankViewSet(viewsets.ModelViewSet):
+class RankListView(generics.ListAPIView):
     queryset = Rank.objects.all()
     serializer_class = RankSerializer
+    permission_classes = (permissions.AllowAny, )
