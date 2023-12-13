@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="da86c416-f1ef-4560-b691-48dff34fea2c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+    <list default="true" id="da86c416-f1ef-4560-b691-48dff34fea2c" name="Changes" comment="readme file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+>>>>>>> 577b8a34e8a8fbabd668a18fe7787b47958b6d80
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +31,19 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
+=======
+>>>>>>> 577b8a34e8a8fbabd668a18fe7787b47958b6d80
   <component name="ProjectId" id="2Z8KYYegYoFbbF8TuBosm6jvmZq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
@@ -45,6 +55,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+=======
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+>>>>>>> 577b8a34e8a8fbabd668a18fe7787b47958b6d80
   <component name="RunManager">
     <configuration name="django_app" type="Python.DjangoServer" factoryName="Django server">
       <module name="django_app" />
@@ -81,7 +96,13 @@
       <updated>1701798315125</updated>
       <workItem from="1701798326976" duration="14762000" />
       <workItem from="1701874697000" duration="337000" />
+<<<<<<< HEAD
       <workItem from="1701884452807" duration="180000" />
+=======
+      <workItem from="1702235059353" duration="9183000" />
+      <workItem from="1702329435924" duration="2900000" />
+      <workItem from="1702410642444" duration="7190000" />
+>>>>>>> 577b8a34e8a8fbabd668a18fe7787b47958b6d80
     </task>
     <servers />
   </component>
