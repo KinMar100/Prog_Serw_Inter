@@ -44,13 +44,13 @@ INSTALLED_APPS = [
 
     # Framework Rest
     'rest_framework',
+    'rest_framework.authtoken',
     # Swagger tool implemented
     'drf_yasg',
-    # ----'rest_framework.authtoken',----
 
     'polls.apps.PollsConfig',
-    'users.apps.UsersConfig'
-    # dodac reszte apek
+    'users.apps.UsersConfig',
+    'posts.apps.PostsConfig',
 
 ]
 
@@ -72,8 +72,7 @@ ROOT_URLCONF = 'django_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / ''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,9 +136,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# REST_FRAMEWORK =
-# {
-#      'DEFAULT_FILTER_BACKENDS': (
-#         'django_filters.rest_framework.DjangoFilterBackend',
-#      ),
-# }
+REST_FRAMEWORK = {
+      # 'DEFAULT_FILTER_BACKENDS': (
+      #    'django_filters.rest_framework.DjangoFilterBackend',
+      # ),
+}

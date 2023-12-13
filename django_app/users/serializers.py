@@ -1,17 +1,24 @@
-from django.contrib.auth import get_user_model, authenticate
-from rest_framework import serializers
+from django.contrib.auth import get_user_model
+# , authenticate
 from django.utils.translation import gettext as _
+
+from rest_framework import serializers
+from . models import User, Rank
 
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for the user object"""
     class Meta:
-        model = get_user_model()
-        fields = ('email', 'password', 'name')
+        model = User
+        fields = (
+            'email',
+            'password',
+            'name',
+        )
         extra_kwargs = {
             'password': {
                 'write_only': True,
-                'min_length': 8,
+                'min_length': 5,
             },
             'email': {
                 'write_only': True,
@@ -21,7 +28,7 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """Create a new user with encrypted password and return it"""
 
-        return get_user_model().objects.create_user(**validated_data)
+        return get_user_model().object.create_user(**validated_data)
 
     def update(self, instance, validated_data):
         """Update a user, setting the password correctly and return it"""
@@ -29,7 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
         password = validated_data.pop('password', None)
         user = super().update(instance, validated_data)
 
-        if password:
+        if password is True:
             user.set_password(password)
             user.save()
 
@@ -39,29 +46,40 @@ class UserSerializer(serializers.ModelSerializer):
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer for the user authentication object"""
 
-    email = serializers.CharField()
+    email = serializers.EmailField()
     password = serializers.CharField(
-        style={'input_type': 'password'},
+        style={
+            'input_type': 'password'
+        },
         trim_whitespace=False
     )
 
     def validate(self, attrs: dict) -> dict:
-        """Validate and authenticate the user"""
-
         email = attrs.get('email')
         password = attrs.get('password')
 
-        user = authenticate(
-            request=self.context.get('request'),
-            username=email,
-            password=password
-        )
+        if email and password:
+            user = User.object.filter(email=email).first()
 
-        if not user:
-            msg = _('Unable to authenticate with provided credentials')
+            if user and user.check_password(password):
+                if not user.is_active:
+                    msg = _('User account is disabled.')
+                    raise serializers.ValidationError(msg)
 
-            raise serializers.ValidationError(msg, code='authentication')
+                attrs['user'] = user
+                return attrs
+            else:
+                msg = _('Unable to log.')
+                raise serializers.ValidationError(msg)
+        else:
+            msg = _('Must include "email" and "password".')
+            raise serializers.ValidationError(msg)
 
-        attrs['user'] = user
 
-        return attrs
+class RankSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rank
+        fields = [
+            'id',
+            'name',
+        ]

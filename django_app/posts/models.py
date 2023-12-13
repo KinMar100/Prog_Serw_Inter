@@ -10,12 +10,12 @@ from users.models import User
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    description = models.TextField
+    description = models.TextField()
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return f'Title: {self.title}'
+        return self.title
 
     def abs_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
@@ -23,7 +23,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.DO_NOTHING)
-    description = models.TextField()
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    description = models.TextField(default='')
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)

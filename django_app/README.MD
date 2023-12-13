@@ -6,7 +6,7 @@ Zawiera kod napisany z pomocą frameworka Django i Django REST (język programow
 
 ## Opis systemu
 
-in progress
+in progress ----- forum internetowe
 
 ## Aplikacja
 
@@ -14,39 +14,67 @@ in progress
 
 Modele
 
-User
+_User_
 - Id
 - E-mail
 - Name
 - Password
 - Date added
 - Last login
+- rank (FK -> Rank)
+
+_Rank_
+- id
+- name
 
 
 ### Polls
 
 Modele:
 
-Category
+_Category_
+- id
 - Name
 
-Question
+_Question_
+- id
 - Name
 - Question text
-- Category
+- Category (FK -> Category)
 - Pub date
 
-Choice
-- Question
+_Choice_
+- id
+- Question (FK -> Question)
 - Choice text
 - Votes
 
+### Posts
+
+Modele:
+
+_Post_
+- id
+- user (FK -> User)
+- title
+- description 
+- add_date
+- edit_date
+
+_Comment_
+- id
+- user (FK -> User)
+- post (FK -> Post)
+- description
+- add_date
+- edit_date
+
 
 ## Funkcjonalności
-- dodawanie postów przez użytkowników (w trakcie)
+- dodawanie postów przez użytkowników (ok)
 - zarządzanie postami: dodawanie, edycja, usuwanie (CRUD) (niezaczęte)
 - dodawanie reakcji do postów innych użytkowników (niezaczęte)
-- formularze do ankiet (w trakcie)
+- formularze do ankiet (ok)
 - moderacja komentarzy (niezaczęte)
-- rangi użytkowników (niezaczęte)
+- rangi użytkowników (ok)
 - najnowsze wpisy (niezaczęte)
