@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="da86c416-f1ef-4560-b691-48dff34fea2c" name="Changes" comment="readme file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +73,17 @@
       <workItem from="1701874697000" duration="337000" />
       <workItem from="1702235059353" duration="9183000" />
       <workItem from="1702329435924" duration="2900000" />
-      <workItem from="1702410642444" duration="7190000" />
+      <workItem from="1702410642444" duration="7229000" />
+      <workItem from="1702418285466" duration="147000" />
     </task>
+    <task id="LOCAL-00001" summary="readme file">
+      <created>1702418176109</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702418176109</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,5 +99,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme file" />
   </component>
 </project>
