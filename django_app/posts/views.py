@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 
 from . models import Post, Comment
 from . serializers import PostSerializer, CommentSerializer
@@ -14,3 +14,5 @@ class PostViewSet(viewsets.ModelViewSet):
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+
+
