@@ -1,3 +1,5 @@
+from typing import Tuple
+
 from django.db import models
 from django.urls import reverse
 
@@ -27,3 +29,6 @@ class Comment(models.Model):
     description = models.TextField(default='')
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
+
+    def view_object(self) -> str:
+        return f'{self.user}"\n"{self.description}'
