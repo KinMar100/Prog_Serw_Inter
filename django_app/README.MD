@@ -81,3 +81,4 @@ _Comment_
 - najnowsze wpisy (niezaczęte)
 
 https://www.geeksforgeeks.org/modelserializer-in-serializers-django-rest-framework/
+https://blog.logrocket.com/using-react-django-create-app-tutorial/

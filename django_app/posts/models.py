@@ -15,6 +15,8 @@ class Post(models.Model):
     description = models.TextField()
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
+    reaction_like = models.ManyToManyField(User, related_name='reactions_like')
+    reaction_dislike = models.ManyToManyField(User, related_name='reactions_dislike')
 
     def __str__(self) -> str:
         return self.title
