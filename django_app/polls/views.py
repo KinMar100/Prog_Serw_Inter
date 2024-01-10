@@ -5,7 +5,6 @@ from . serializers import QuestionSerializer, ChoiceSerializer, CategorySerializ
 
 # Create your views here.
 
-
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer

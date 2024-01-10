@@ -8,5 +8,5 @@ router.register(r'choices', ChoiceViewSet)
 router.register(r'categories', CategoryViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]

@@ -31,7 +31,6 @@ class CommentSerializer(serializers.ModelSerializer):
         read_only_fields = ['add_date', 'user']
 
 
-
 class ReactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reaction

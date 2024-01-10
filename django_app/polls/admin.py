@@ -27,5 +27,3 @@ class ChoiceAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name']
-
-# done

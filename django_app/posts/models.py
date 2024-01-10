@@ -1,12 +1,10 @@
-from typing import Tuple
-
 from django.db import models
 from django.urls import reverse
 
 from users.models import User
 
-
 # Create your models here.
+
 
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -14,8 +12,6 @@ class Post(models.Model):
     description = models.TextField()
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
-    reaction_like = models.ManyToManyField(User, related_name='reactions_like')
-    reaction_dislike = models.ManyToManyField(User, related_name='reactions_dislike')
 
     def __str__(self) -> str:
         return self.title
@@ -30,7 +26,6 @@ class Comment(models.Model):
     description = models.TextField(default='')
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
-
 
     def view_object(self) -> str:
         return f'{self.user}"\n"{self.description}'

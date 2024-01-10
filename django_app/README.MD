@@ -70,15 +70,20 @@ _Comment_
 - edit_date
 - (wzgledem funkcjonalnosci moderacji komentarzami dodać pole: is_moderate)
 
+_Reaction_
+
+- id
+- user (FK -> User)
+- post (FK -> Post)
+- type_of_reaction
+- add_date
+
 
 ## Funkcjonalności
 - dodawanie postów przez użytkowników (ok)
-- zarządzanie postami: dodawanie, edycja, usuwanie (CRUD) (niezaczęte)
+- zarządzanie postami: dodawanie, edycja, usuwanie (CRUD) (ok - admin)
 - dodawanie reakcji do postów innych użytkowników (ok)
 - formularze do ankiet (ok)
-- moderacja komentarzy (niezaczęte)
+- moderacja komentarzy (ok)
 - rangi użytkowników (ok)
-- najnowsze wpisy (niezaczęte)
-
-https://www.geeksforgeeks.org/modelserializer-in-serializers-django-rest-framework/
-https://blog.logrocket.com/using-react-django-create-app-tutorial/
+- najnowsze wpisy (posty) (ok)

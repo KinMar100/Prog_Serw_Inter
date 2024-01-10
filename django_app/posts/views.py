@@ -1,13 +1,18 @@
 from rest_framework import viewsets, generics
 
-from . models import Post, Comment, Reaction
-from . serializers import PostSerializer, CommentSerializer, ReactionSerializer
+from .models import Post, Comment, Reaction
+from .serializers import PostSerializer, CommentSerializer, ReactionSerializer
+
 
 # Create your views here.
 
-
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+class PostNewestViewSet(generics.ListAPIView):
+    queryset = Post.objects.order_by('-add_date')
     serializer_class = PostSerializer
 
 
@@ -19,4 +24,3 @@ class CommentViewSet(viewsets.ModelViewSet):
 class ReactionViewSet(viewsets.ModelViewSet):
     queryset = Reaction.objects.all()
     serializer_class = ReactionSerializer
-
