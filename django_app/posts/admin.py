@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Reaction
 
 # Register your models here.
 
@@ -16,5 +16,13 @@ class PostAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     search_fields = ['user', 'post']
     list_display = ['id', 'description', 'post', 'user', 'add_date', 'edit_date']
+    list_filter = ['id']
+    ordering = ['id']
+
+
+@admin.register(Reaction)
+class ReactionAdmin(admin.ModelAdmin):
+    search_fields = ['post', 'user']
+    list_display = ['id', 'post', 'type_of_reaction', 'user', 'add_date']
     list_filter = ['id']
     ordering = ['id']

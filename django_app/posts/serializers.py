@@ -1,4 +1,4 @@
-from . models import Post, Comment
+from . models import Post, Comment, Reaction
 from rest_framework import serializers
 
 
@@ -27,4 +27,19 @@ class CommentSerializer(serializers.ModelSerializer):
             'add_date',
             'edit_date',
         ]
+<<<<<<< Updated upstream
         read_only_fields = ['add_date', 'user']
+=======
+
+
+class ReactionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reaction
+        fields = [
+            'id',
+            'type_of_reaction',
+            'post',
+            'user',
+            'add_date',
+        ]
+>>>>>>> Stashed changes

@@ -74,7 +74,7 @@ _Comment_
 ## Funkcjonalności
 - dodawanie postów przez użytkowników (ok)
 - zarządzanie postami: dodawanie, edycja, usuwanie (CRUD) (niezaczęte)
-- dodawanie reakcji do postów innych użytkowników (niezaczęte)
+- dodawanie reakcji do postów innych użytkowników (ok)
 - formularze do ankiet (ok)
 - moderacja komentarzy (niezaczęte)
 - rangi użytkowników (ok)

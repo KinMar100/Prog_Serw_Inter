@@ -8,7 +8,6 @@ from users.models import User
 
 # Create your models here.
 
-
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
@@ -32,5 +31,27 @@ class Comment(models.Model):
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
 
+<<<<<<< Updated upstream
     def view_object(self) -> str:
         return f'{self.user}"\n"{self.description}'
+=======
+
+class Reaction(models.Model):
+    LIKE = 'like'
+    LOVE = 'love'
+    DISLIKE = 'dislike'
+
+    REACTION_CHOICE = [
+        (LIKE, 'Like'),
+        (LOVE, 'Love'),
+        (DISLIKE, 'Dislike')
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    type_of_reaction = models.CharField(max_length=20, choices=REACTION_CHOICE)
+    add_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f'{self.user} reacted with \'{self.type_of_reaction}\' to {self.post}'
+>>>>>>> Stashed changes
