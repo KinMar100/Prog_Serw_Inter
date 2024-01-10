@@ -6,7 +6,7 @@ Zawiera kod napisany z pomocą frameworka Django i Django REST (język programow
 
 ## Opis systemu
 
-in progress ----- forum internetowe
+Forum internetowe
 
 ## Aplikacja
 
@@ -68,7 +68,6 @@ _Comment_
 - description
 - add_date
 - edit_date
-- (wzgledem funkcjonalnosci moderacji komentarzami dodać pole: is_moderate)
 
 _Reaction_
 
