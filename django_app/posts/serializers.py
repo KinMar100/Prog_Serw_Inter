@@ -27,9 +27,9 @@ class CommentSerializer(serializers.ModelSerializer):
             'add_date',
             'edit_date',
         ]
-<<<<<<< Updated upstream
+
         read_only_fields = ['add_date', 'user']
-=======
+
 
 
 class ReactionSerializer(serializers.ModelSerializer):
@@ -42,4 +42,4 @@ class ReactionSerializer(serializers.ModelSerializer):
             'user',
             'add_date',
         ]
->>>>>>> Stashed changes
+

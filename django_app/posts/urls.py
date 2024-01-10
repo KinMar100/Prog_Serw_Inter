@@ -11,8 +11,5 @@ app_name = 'posts'
 
 urlpatterns = [
     path('', include(router.urls)),
-<<<<<<< Updated upstream
     path('api-auth/', include('rest_framework.urls')),
-=======
->>>>>>> Stashed changes
 ]

@@ -31,10 +31,10 @@ class Comment(models.Model):
     add_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
 
-<<<<<<< Updated upstream
+
     def view_object(self) -> str:
         return f'{self.user}"\n"{self.description}'
-=======
+
 
 class Reaction(models.Model):
     LIKE = 'like'
@@ -54,4 +54,3 @@ class Reaction(models.Model):
 
     def __str__(self) -> str:
         return f'{self.user} reacted with \'{self.type_of_reaction}\' to {self.post}'
->>>>>>> Stashed changes
