@@ -9,5 +9,6 @@ router.register(r'add_comment', CommentViewSet)
 app_name = 'posts'
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 ]

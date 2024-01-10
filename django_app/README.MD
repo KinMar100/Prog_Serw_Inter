@@ -68,6 +68,7 @@ _Comment_
 - description
 - add_date
 - edit_date
+- (wzgledem funkcjonalnosci moderacji komentarzami dodać pole: is_moderate)
 
 
 ## Funkcjonalności
@@ -78,3 +79,6 @@ _Comment_
 - moderacja komentarzy (niezaczęte)
 - rangi użytkowników (ok)
 - najnowsze wpisy (niezaczęte)
+
+https://www.geeksforgeeks.org/modelserializer-in-serializers-django-rest-framework/
+https://blog.logrocket.com/using-react-django-create-app-tutorial/

@@ -13,6 +13,7 @@ class PostSerializer(serializers.ModelSerializer):
             'add_date',
             'edit_date',
         ]
+        read_only_fields = ['add_date', 'user']
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -26,3 +27,4 @@ class CommentSerializer(serializers.ModelSerializer):
             'add_date',
             'edit_date',
         ]
+        read_only_fields = ['add_date', 'user']

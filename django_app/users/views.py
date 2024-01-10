@@ -36,7 +36,7 @@ class CreateTokenView(ObtainAuthToken):
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
 
 
-class RankListView(generics.ListAPIView):
+class RankListView(generics.ListCreateAPIView):
     queryset = Rank.objects.all()
     serializer_class = RankSerializer
     permission_classes = (permissions.AllowAny, )
